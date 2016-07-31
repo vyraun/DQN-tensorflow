@@ -32,6 +32,21 @@ To train a model for Breakout:
 
     $ python main.py --env_name=Breakout-v0 --is_train=True
     $ python main.py --env_name=Breakout-v0 --is_train=True --display=True
+    
+    I get the error:
+    Traceback (most recent call last):
+  File "main.py", line 66, in <module>
+    tf.app.run()
+  File "/home/anaconda2/envs/tensorflow/lib/python2.7/site-packages/tensorflow/python/platform/app.py", line 30, in run
+    sys.exit(main(sys.argv))
+  File "main.py", line 58, in main
+    agent = Agent(config, env, sess)
+  File "/home/DQN-tensorflow/dqn/agent.py", line 22, in __init__
+    self.memory = ReplayMemory(self.config, self.model_dir)
+  File "/home/DQN-tensorflow/dqn/replay_memory.py", line 18, in __init__
+    self.screens = np.empty((self.memory_size, config.screen_height, config.screen_width), dtype = np.float16)
+MemoryError
+
 
 To test and record the screen with gym:
 
